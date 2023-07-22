@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/path/to/cdn/bootstrap.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Explora&family=Roboto+Slab:wght@100;500;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="D:\c\cpr.css">
+</head>
+<body>
+  
+  <nav>
+    <ul>
+     
+        <li><a href="D:\c\c.html" id="home">HOME</a></li>
+        <li><a href="#" ><img id="logo" src="D:\c\Screenshot (2)1.png" alt="" srcset=""></a></li>
+    </ul>
+</nav>
+<br>
+<br>
+
+ <div class="content">
+  <br>
+  <div id="text"><h2> INSTRUCTIONS</h2>
+
+<p><h5>TO CALCULATE CPR:</h5></p>
+<p>(1.)	Enter the value of weight in ‘mg’ <div id="space"> 
+                  1g = 1000mg</div></p>
+
+<p>(2.)	Enter the value of density in ‘g/cm^3’</p>
+
+    <p>(3.) Enter the value of time in ‘hrs’</p>
+
+<p>(4.)	Enter the value of area in –</p>
+                                                            <p>  ‘inch^2’  to calculate CPR in mpy</p>
+                                                           <p>   ‘cm^2’  to calculate CPR in mmpy</p>
+                 <p>1 inch^2 = 6.45cm^2</p>
+          <br>
+<h5>TO CALCULATE TIME :</h5>
+
+<p>(1.)	Enter the value of weight in  ‘mg’
+                1g = 1000mg</p>
+
+<p>(2.)	Enter the value of density in  ‘g/cm^3’</p>
+
+<p>(3.)	Enter the value of CPR in mpy or mmpy</p>
+
+<p>(4.)	Enter the value of area in -
+                                                  ‘inch^2’ IF CPR is in mpy
+                                                  ‘cm^2’ IF CPR is in mmpy
+                                                </p>
+          </div></div>
+  <section id="cc"><h4>What you wish to calculate?</h4>
+  <button onclick="cpr_mpy()">CPR in mpy</button>
+  <button onclick="cpr_mmpy()" >CPR in mmpy</button>
+  <button onclick="time()">CPR in time</button>
+</section>
+<br><br>
+
+<footer class="center bg-dark">
+  <p>H1 media &copy; 2022</p>
+ </footer>
+
+  <script>
+    function cpr_mpy() {
+    const k = parseInt(534)
+    var w = parseFloat(prompt("Enter the  weight in mg:"))
+    var nom=k*w
+    var p = parseFloat(prompt("Enter the density in g/cm^3:"))
+    var a = parseFloat(prompt("Enter the  area in inch^2:"))
+    var t = parseFloat(prompt("Enter the  time in hours:"))
+  var den=p*a*t
+  var sum=nom/den
+   alert("The Value of CPR in mpy :" + sum )
+  }</script>
+  <script>
+    function cpr_mmpy() {
+      const k = parseFloat(87.6)
+      var w = parseFloat(prompt("Enter the  weight in mg:"))
+      var nom=k*w
+      var p = parseFloat(prompt("Enter the density in g/cm^3:"))
+      var a = parseFloat(prompt("Enter the area in cm^2:"))
+      var t = parseFloat(prompt("Enter the time in hours:"))
+      var den=p*a*t
+      var sum=nom/den      
+      alert("The Value of CPR in mmpy:" + sum)
+    }
+    
+  </script>
+  <script>
+    function time() {
+    var s = parseInt(prompt("Enter 1 for to enter cpr in mpy and 2 to enter cpr in mmpy"))
+  
+    if (s == 1) {
+      return time1()
+    }
+    else {
+      return time_2()
+    }
+    function time1() {
+      const k = parseFloat(534)
+      var w = parseFloat(prompt("Enter the value weight in mg:"))
+      var nom=k*w
+      var p = parseFloat(prompt("Enter the  density in g/cm^3:"))
+      var a = parseFloat(prompt("Enter the varea in inch^2:"))
+      var e = parseFloat(prompt("Enter the vCPR in mpy:"))
+   
+    var den=p*a*e
+    var sum=nom/den
+      alert("Time taken in hours :" + sum)}
+  
+      function time_2() {
+        const k = parseInt(87.6)
+        var w = parseFloat(prompt("Enter the value weight in mg:"))
+        var nom=k*w
+        var p = parseFloat(prompt("Enter the value of density in g/cm^3:"))
+        var a = parseFloat(prompt("Enter the value of area in cm^2:"))
+        var f = parseFloat(prompt("Enter the value of CPR in mmpy:"))
+        var den=p*a*f
+        var sum=nom/den
+          alert("Time taken in hours :" + sum)
+        
+      }
+    }</script>
+    <script type="module">
+      import * as bsDialog from "./src/bs-dialogs.js";
+    </script>
+    
+</body>
+</html>
